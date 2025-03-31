@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <style>
+        /* Обнуляем отступы и размеры для всех элементов */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Статичный фон с градиентом */
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        /* Контейнер для текста */
+        .container {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(15px);
+            animation: slideIn 2s ease-out;
+            transform-origin: center;
+        }
+
+        /* Анимация появления контейнера */
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Заголовок */
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Анимация текста */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Картинка профиля */
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        /* Эффект на картинку */
+        .profile-img:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+        }
+
+        /* Текстовые блоки */
+        p {
+            font-size: 1.2em;
+            margin: 15px 0;
+            opacity: 0;
+            animation: fadeText 2s ease forwards;
+        }
+
+        p:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        p:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        /* Анимация текста */
+        @keyframes fadeText {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Ссылки */
+        a {
+            color: #1abc9c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        a:hover {
+            color: #16a085;
+            transform: translateY(-3px);
+        }
+
+        /* Кнопка */
+        .contact-button {
+            background-color: #1abc9c;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Эффект кнопки */
+        .contact-button:hover {
+            background-color: #16a085;
+            transform: translateY(-3px);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Привет, я Даня!</h1>
+        </header>
+
+        <img class="profile-img" src="your-photo.jpg" alt="Фото">
+
+        <p>Мой Телеграмм: <a href="https://t.me/@kavexss" target="_blank">@kavexss</a></p>
+        <p>Мой номер: <a href="tel:+79631265019">+7 963 126 50 19</a></p>
+
+        <button class="contact-button" onclick="window.location.href='https://t.me/@kavexss'">Написать в Телеграм</button>
+    </div>
+
+</body>
+</html>
